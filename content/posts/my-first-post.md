@@ -1,7 +1,9 @@
 ---
-title: "My First Post"
+title: "一些常用的zsh插件"
 date: 2019-09-15T18:12:58+08:00
 draft: false
+categories: ["Tools"]
+tags: ["Zsh"]
 ---
 
 # 一些常用的zsh插件
