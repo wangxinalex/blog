@@ -22,7 +22,7 @@ enableEmoji = true
 defaultContentLanguage = "en"
 
 [params.info]
-description = "Minimalist theme for Hugo"
+description = "Break down these walls and come on in"
 title404 = "Nothing's here!"
 
 [params.assets]
@@ -33,7 +33,7 @@ gopher = "" # used in 404 template ( Generator: https://gopherize.me )
 
 [params.copyright]
 prefix = ""
-holder = "MunifTanjim"
+holder = "wangxinalex"
 startYear = "2017"
 suffix = ""
 
@@ -73,17 +73,11 @@ page = "" # Twitter page username
 titleSeparator = "•"
 
 [params.social]
-codepen = "MunifTanjim"
-email = "contact@example.com"
-facebook = "MunifTanjim"
-github = "MunifTanjim"
-gitlab = "MunifTanjim"
-instagram = "MunifTanjim"
-linkedin = "muniftanjim"
-twitter = "MunifTanjim"
-telegram = "MunifTanjim"
-google_scholar = "qc6CJjYAAAAJ"
-youtube = "UCT-U0rNerYxItGcuoPX-WYA"
+email = "wangxinalex@gmail.com"
+facebook = "wangxinalex"
+github  = "wangxinalex"
+linkedin = "wangxinalex"
+twitter = "wangxinalex"
 
 [params.comments]
 enable = false
@@ -98,7 +92,7 @@ dataAttrs = "" # "data-isso='https://isso.example.com' data-isso-require-author=
 enable = true
 apiEndpoint = "https://api.staticman.net/v2/entry"
 maxDepth = 2
-username = "MunifTanjim"
+username = "wangxinalex"
 repository = "minimo"
 
 # Utterances: https://utteranc.es
@@ -107,7 +101,7 @@ enable = false
 issueTerm = "pathname" # pathname / url / title
 
 [params.comments.utterances.github]
-username = "MunifTanjim"
+username = "wangxinalex"
 repository = "minimo"
 
 [params.search]
@@ -131,7 +125,7 @@ page = "/:slug/"
 name = "Repo"
 weight = -10
 identifier = "repository"
-url = "https://github.com/MunifTanjim/minimo"
+url = "https://github.com/wangxinalex"
 
 [blackfriday]
 hrefTargetBlank = true
