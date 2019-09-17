@@ -71,6 +71,7 @@ public class TestNaturalNumber {
 
 以上测试用例使用10和-10作为输入，测试`isNaturalNumber`方法能否做出正确判断。如果我们使用JaCoCo作为代码测试覆盖率工具，因为此时`num > 0`的两个分支均已覆盖到，JaCoCo会显示此时的代码覆盖率是100%。但这里的测试用例显然是不充分的，因为它没有反映最为关键的`num == 0`的情况。而一般的代码覆盖率工具无法有效地反映出这一点。
 
+![JaCoCo Report](https://s2.ax1x.com/2019/09/17/nIcmGD.png)
 
 ## mutation test的意义
 
@@ -113,6 +114,8 @@ apply plugin: 'info.solidsoft.pitest'
 | NaturalNumber.java | 100% 4/4 |  67% 2/3 |
 
 我们可以发现，由`changed conditional boundary`带来的一个mutation survived。这个mutation的行为是将`num  > 0`改为`num >= 0`，即更改边界条件，但测试用例没能捕捉到这个差异。
+
+![PITest Report](https://s2.ax1x.com/2019/09/17/nIccJU.png)
 
 PITest可以提醒我们添加`num == 0`的测试用例，而当我们添加了这个测试用例后，错误的判断条件就会被测试出来。
 
