@@ -113,10 +113,11 @@ apply plugin: 'info.solidsoft.pitest'
 | --- | --- | --- |
 | NaturalNumber.java | 100% 4/4 |  67% 2/3 |
 
-我们可以发现，由`changed conditional boundary`带来的一个mutation survived。这个mutation的行为是将`num  > 0`改为`num >= 0`，即更改边界条件，但测试用例没能捕捉到这个差异。
+我们可以发现，由`changed conditional boundary`([CONDITIONALS_BOUNDARY](http://pitest.org/quickstart/mutators/#CONDITIONALS_BOUNDARY))带来的一个mutation survived。这个mutation的行为是将`num  > 0`改为`num >= 0`，即更改边界条件，但测试用例没能捕捉到这个差异。
 
 ![PITest Report](https://s2.ax1x.com/2019/09/17/nIccJU.png)
 
-PITest可以提醒我们添加`num == 0`的测试用例，而当我们添加了这个测试用例后，错误的判断条件就会被测试出来。
+为了捕捉到这个mutant，我们需要针对`num == 0`这种边界条件添加新的测试用例
+，而当我们添加了这个测试用例后，错误的判断条件（`num > 0`）就会被测试出来。
 
 
