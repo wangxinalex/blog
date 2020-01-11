@@ -37,10 +37,61 @@ public class ShapeFactory {
 }
 ```
 
-1. they can return an object of any subtype of their return type
-2. returned object can vary from call to call as a function of the input parameters
-3. returned object need not exist when the class containing the method is written
-   1. bridge pattern
+3. they can return an object of any subtype of their return type
+4. returned object can vary from call to call as a function of the input parameters
+5. returned object need not exist when the class containing the method is written
+    * bridge pattern
+
+```csharp
+namespace BridgePattern
+{
+    abstract class HandsetSoft
+    {
+        public abstract void Run();
+    }
+}
+
+using System;
+
+namespace BridgePattern
+{
+    class HandsetGame : HandsetSoft
+    {
+        public override void Run()
+        {
+            Console.WriteLine("运行手机游戏");
+        }
+    }
+}
+
+namespace BridgePattern
+{
+    //手机品牌
+    abstract class HandsetBrand
+    {
+        protected HandsetSoft soft;
+        //设置手机软件
+        public void SetHandsetSoft(HandsetSoft soft)
+        {
+            this.soft = soft;
+        }
+        //运行
+        public abstract void Run();
+    }
+}
+
+namespace BridgePattern
+{
+    //手机品牌N
+    class HandsetBrandN : HandsetBrand
+    {
+        public override void Run()
+        {
+            soft.Run();
+        }
+    }
+}
+```
 
 Cons:
 
@@ -717,6 +768,34 @@ public enum Operation {
     public abstract double apply(double a, double b);
 }
 ```
+
+```java
+public enum Operation {
+  PLUS("+", (x, y) -> x + y),
+  MINUS("-", (x, y) -> x - y),
+  MULTIPLY("*", (x, y) -> x * y),
+  DIVIDE("/", (x, y) -> x / y);
+  
+  private final String symbol;
+  private final DoubleBinaryOperator op;
+
+  @Override
+  public String toString() {
+    return this.symbol;
+  }
+
+  Operation(String symbol, DoubleBinaryOperator op) {
+    this.symbol = symbol;
+    this.op = op;
+  }
+
+  public double apply(double x, double y) {
+    return op.applyAsDouble(x, y);
+  }
+}
+
+```
+
 
 Use enums any time you need a set of constants whose members are **known at compile time**.
 It is not necessary that the set of constants in an enum type stay fixed for all time.
@@ -1399,14 +1478,14 @@ If you need to use lazy initialization for performance on an instance field, use
 // Double-check idiom for lazy initialization of instance fields
 private volatile FieldType field;
 private FieldType getField() {
-FieldType result = field;
-if (result == null) { // First check (no locking)
-synchronized(this) {
-if (field == null) // Second check (with locking)
-field = result = computeFieldValue();
-}
-}
-return result;
+    FieldType result = field;
+    if (result == null) { // First check (no locking)
+        synchronized(this) {
+            if (field == null) // Second check (with locking)
+            field = result = computeFieldValue();
+        }
+    }
+    return result;
 }
 ```
 
