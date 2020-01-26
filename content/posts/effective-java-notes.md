@@ -1149,7 +1149,7 @@ public BigInteger mod(BigInteger m) {
 
 The `Objects.requireNonNull` method, added in Java 7, is flexible and convenient, so there’s no reason to perform null checks manually anymore.
 
-```javar
+```java
 // Inline use of Java's null-checking facility
 this.strategy = Objects.requireNonNull(strategy, "strategy");
 ```
@@ -1498,7 +1498,7 @@ Threads should not *busy-wait*, repeatedly checking a shared object waiting for 
 
 The resulting program will be neither robust nor portable.
 
-## Chapter 12. Serialziation
+## Chapter 12. Serialization
 
 ### Item 84: Prefer alternatives to Java serialization
 
