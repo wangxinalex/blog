@@ -3,7 +3,7 @@ title = "Tour de Babel"
 # for smart copyright line, leave this blank and check [params.copyright]
 copyright = ""
 
-theme = "minimo"
+theme = "ananke"
 
 disqusShortname = ""
 googleAnalytics = ""
