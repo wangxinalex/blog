@@ -1,4 +1,4 @@
-baseURL = "http://io.wxa.me/"
+baseURL = "https://io.wxa.me/"
 title = "Tour de Babel"
 # for smart copyright line, leave this blank and check [params.copyright]
 copyright = ""
