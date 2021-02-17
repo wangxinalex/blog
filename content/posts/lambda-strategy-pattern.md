@@ -92,7 +92,7 @@ public class CompressDemo {
 }
 ```
 
-在上述例子中，`GZipCompressionStrategy`和`ZipCompressionStrategy`两个策略实体类都实现了`CompressionStrategy`接口，后者是一个标准的函数接口，因此一定可以替换为lambda表达式。改函数接口输入一个OutputStream对象，输出一个OutputStream对象，符合GZipOutputStream和ZipOutputStream的构造方法的签名，因此可以用其构造方法代替。
+在上述例子中，`GZipCompressionStrategy`和`ZipCompressionStrategy`两个策略实体类都实现了`CompressionStrategy`接口，后者是一个标准的函数接口，因此一定可以替换为lambda表达式。改函数接口输入一个`OutputStream`对象，输出一个`OutputStream`对象，符合`GZipOutputStream`和`ZipOutputStream`的构造方法的签名，因此可以用其构造方法代替。
 
 ```java
 // GZIPOutputStream的构造方法
